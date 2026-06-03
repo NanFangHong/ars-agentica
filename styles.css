@@ -240,6 +240,7 @@ h3 {
   font-size: 1.06rem;
 }
 
+.plain-section,
 .folio,
 .chapter,
 .assay {
@@ -247,15 +248,98 @@ h3 {
   padding: 88px 20px;
 }
 
+.plain-inner,
 .folio-inner,
 .chapter-grid,
 .tool-row,
 .distillery,
+.example-grid,
 .objection-grid,
 .guild-table,
+.practice-steps,
 .assay-panel {
   width: min(100%, var(--max));
   margin: 0 auto;
+}
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    border-color 700ms ease,
+    background-color 700ms ease,
+    box-shadow 700ms ease;
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plain-section {
+  background:
+    linear-gradient(180deg, rgba(247, 236, 207, 0.98), rgba(239, 224, 189, 0.78)),
+    var(--vellum-light);
+}
+
+.plain-inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
+  gap: 54px;
+  align-items: start;
+}
+
+.plain-heading {
+  position: sticky;
+  top: 28px;
+}
+
+.takeaway-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.takeaway-grid article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 22px;
+  min-height: 150px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 249, 229, 0.78), rgba(216, 189, 130, 0.18)),
+    rgba(247, 236, 207, 0.7);
+}
+
+.mini-sigil {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(150, 57, 45, 0.42);
+  border-radius: 50%;
+  color: var(--cinnabar);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.takeaway-grid h3,
+.takeaway-grid p {
+  grid-column: 2;
+}
+
+.takeaway-grid h3 {
+  margin-bottom: 8px;
+  color: var(--lapis);
+}
+
+.takeaway-grid p {
+  margin-bottom: 0;
 }
 
 .folio {
@@ -374,6 +458,7 @@ blockquote {
 }
 
 .tool-row article,
+.example-grid article,
 .objection-grid article,
 .vessel,
 .assay-panel {
@@ -398,6 +483,7 @@ blockquote {
 }
 
 .tool-row p,
+.example-grid p,
 .vessel p,
 .objection-grid p {
   margin-bottom: 0;
@@ -454,6 +540,10 @@ blockquote {
   right: 10px;
   height: 2px;
   background: var(--gold);
+  box-shadow: 0 0 0 rgba(189, 139, 53, 0);
+  transition:
+    background-color 700ms ease,
+    box-shadow 700ms ease;
 }
 
 .pipe::after {
@@ -466,6 +556,98 @@ blockquote {
   border-top: 2px solid var(--gold);
   border-right: 2px solid var(--gold);
   transform: rotate(45deg);
+  transition:
+    border-color 700ms ease,
+    filter 700ms ease;
+}
+
+.distillery.is-active .pipe::before {
+  background: #e9bf68;
+  box-shadow: 0 0 22px rgba(233, 191, 104, 0.62);
+}
+
+.distillery.is-active .pipe::after {
+  border-color: #e9bf68;
+  filter: drop-shadow(0 0 8px rgba(233, 191, 104, 0.62));
+}
+
+.examples {
+  background:
+    linear-gradient(180deg, rgba(239, 224, 189, 0.95), rgba(247, 236, 207, 0.88)),
+    var(--vellum);
+}
+
+.examples .eyebrow,
+.glossary .eyebrow,
+.practice .eyebrow {
+  color: var(--cinnabar);
+}
+
+.example-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 52px;
+}
+
+.example-grid article {
+  min-height: 310px;
+  padding: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 249, 229, 0.78), rgba(216, 189, 130, 0.18)),
+    rgba(247, 236, 207, 0.7);
+  box-shadow: 0 18px 36px rgba(74, 45, 22, 0.06);
+}
+
+.diagram-mark {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(189, 139, 53, 0.72);
+  border-radius: 50%;
+}
+
+.diagram-mark::before,
+.diagram-mark::after {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px solid rgba(38, 63, 104, 0.5);
+}
+
+.distill-mark::before {
+  border-radius: 50% 50% 44% 44%;
+}
+
+.distill-mark::after {
+  inset: 32px 18px 12px;
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+}
+
+.lens-mark::before {
+  inset: 24px 13px;
+  border-radius: 50%;
+}
+
+.lens-mark::after {
+  inset: 40px 6px auto;
+  height: 1px;
+  border: 0;
+  background: rgba(150, 57, 45, 0.7);
+}
+
+.assay-mark::before {
+  inset: 16px 27px;
+  transform: rotate(45deg);
+}
+
+.assay-mark::after {
+  inset: 22px;
+  border-radius: 50%;
 }
 
 .critique {
@@ -508,8 +690,11 @@ blockquote {
   z-index: 1;
   display: grid;
   margin-top: 56px;
-  border: 1px solid var(--line);
-  background: rgba(247, 236, 207, 0.62);
+  border: 3px double rgba(80, 54, 36, 0.32);
+  background:
+    linear-gradient(180deg, rgba(255, 249, 229, 0.58), rgba(239, 224, 189, 0.7)),
+    rgba(247, 236, 207, 0.62);
+  box-shadow: inset 0 0 0 8px rgba(189, 139, 53, 0.08);
 }
 
 .guild-table [role="row"] {
@@ -524,7 +709,7 @@ blockquote {
 .guild-table span {
   min-width: 0;
   padding: 18px;
-  border-left: 1px solid var(--line);
+  border-left: 1px solid rgba(80, 54, 36, 0.22);
 }
 
 .guild-table span:first-child {
@@ -535,8 +720,84 @@ blockquote {
 
 .guild-table [role="columnheader"] {
   color: var(--ink);
-  background: rgba(189, 139, 53, 0.16);
+  background: rgba(189, 139, 53, 0.2);
   font-weight: 700;
+}
+
+.glossary {
+  background:
+    linear-gradient(135deg, rgba(37, 63, 104, 0.08), rgba(247, 236, 207, 0.94)),
+    var(--vellum-light);
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.glossary-grid article {
+  border-left: 2px solid rgba(150, 57, 45, 0.56);
+  padding: 0 0 0 20px;
+}
+
+.glossary-grid h3 {
+  color: var(--lapis);
+}
+
+.glossary-grid p {
+  margin-bottom: 0;
+}
+
+.practice {
+  color: var(--vellum-light);
+  background:
+    linear-gradient(135deg, rgba(47, 107, 93, 0.92), rgba(35, 23, 17, 0.98) 58%, rgba(37, 63, 104, 0.86)),
+    #211711;
+}
+
+.practice .chapter-body {
+  color: rgba(247, 236, 207, 0.9);
+}
+
+.practice-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 52px;
+}
+
+.practice-steps li {
+  min-height: 250px;
+  border: 1px solid rgba(189, 139, 53, 0.4);
+  border-radius: 6px;
+  padding: 28px;
+  background: rgba(247, 236, 207, 0.08);
+}
+
+.practice-steps span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(242, 209, 138, 0.58);
+  border-radius: 50%;
+  color: #f2d18a;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.practice-steps strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #f2d18a;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.18;
 }
 
 .assay {
@@ -624,17 +885,23 @@ blockquote {
     padding-bottom: 42px;
   }
 
+  .plain-section,
   .folio,
   .chapter,
   .assay {
     padding: 68px 16px;
   }
 
+  .plain-inner,
   .folio-inner,
   .chapter-grid,
   .chapter-grid.reversed {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .plain-heading {
+    position: static;
   }
 
   .chapter-grid.reversed .chapter-title {
@@ -653,7 +920,12 @@ blockquote {
   }
 
   .tool-row,
+  .example-grid,
   .objection-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .practice-steps {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -729,6 +1001,7 @@ blockquote {
     min-height: 82svh;
   }
 
+  .plain-section,
   .folio,
   .chapter,
   .assay {
@@ -761,23 +1034,43 @@ blockquote {
   }
 
   .tool-row,
+  .example-grid,
   .objection-grid {
     grid-template-columns: 1fr;
   }
 
   .tool-row article,
+  .example-grid article,
   .objection-grid article,
   .vessel,
+  .practice-steps li,
   .assay-panel {
     min-height: 0;
     padding: 22px;
   }
 
+  .takeaway-grid article {
+    display: block;
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .mini-sigil {
+    margin-bottom: 16px;
+  }
+
   .tool-row,
+  .example-grid,
   .objection-grid,
   .distillery,
-  .guild-table {
+  .guild-table,
+  .practice-steps {
     margin-top: 34px;
+  }
+
+  .glossary-grid,
+  .practice-steps {
+    grid-template-columns: 1fr;
   }
 
   .chapter-body p {
@@ -794,5 +1087,22 @@ blockquote {
 
   .site-footer p {
     margin-bottom: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pipe::before,
+  .pipe::after {
+    transition: none;
   }
 }
