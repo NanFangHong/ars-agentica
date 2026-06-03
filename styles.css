@@ -161,8 +161,8 @@ img {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(20, 12, 9, 0.9) 0%, rgba(20, 12, 9, 0.48) 48%, rgba(20, 12, 9, 0.7) 100%),
-    linear-gradient(180deg, rgba(20, 12, 9, 0.35), rgba(20, 12, 9, 0.86));
+    linear-gradient(90deg, rgba(20, 12, 9, 0.76) 0%, rgba(20, 12, 9, 0.42) 44%, rgba(20, 12, 9, 0.36) 70%, rgba(20, 12, 9, 0.52) 100%),
+    linear-gradient(180deg, rgba(20, 12, 9, 0.14), rgba(20, 12, 9, 0.72));
 }
 
 .hero-vellum {
@@ -170,7 +170,7 @@ img {
   inset: auto 0 0 0;
   z-index: -1;
   height: 28%;
-  background: linear-gradient(180deg, transparent, rgba(20, 12, 9, 0.68));
+  background: linear-gradient(180deg, transparent, rgba(20, 12, 9, 0.58));
 }
 
 .hero-copy {
@@ -240,21 +240,28 @@ h3 {
   font-size: 1.06rem;
 }
 
+.lead-section,
 .plain-section,
 .folio,
+.model-section,
 .chapter,
 .assay {
   position: relative;
   padding: 88px 20px;
 }
 
+.lead-grid,
+.thesis-strip,
 .plain-inner,
 .folio-inner,
 .chapter-grid,
 .tool-row,
 .distillery,
+.case-stack,
 .example-grid,
+.model-grid,
 .objection-grid,
+.stakes-ledger,
 .guild-table,
 .practice-steps,
 .assay-panel {
@@ -282,6 +289,66 @@ h3 {
   background:
     linear-gradient(180deg, rgba(247, 236, 207, 0.98), rgba(239, 224, 189, 0.78)),
     var(--vellum-light);
+}
+
+.lead-section {
+  background:
+    linear-gradient(180deg, rgba(247, 236, 207, 0.98), rgba(239, 224, 189, 0.76)),
+    var(--vellum-light);
+}
+
+.lead-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.64fr) minmax(260px, 0.36fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.lead-copy {
+  max-width: 760px;
+}
+
+.lead-copy p:not(.eyebrow) {
+  font-size: 1.16rem;
+}
+
+.pull-quote {
+  border-block: 3px double rgba(150, 57, 45, 0.38);
+  padding: 34px 0;
+  color: var(--lapis);
+}
+
+.pull-quote p {
+  margin-bottom: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.45rem;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.thesis-strip {
+  margin-top: 74px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 249, 229, 0.72), rgba(216, 189, 130, 0.18)),
+    rgba(247, 236, 207, 0.76);
+}
+
+.thesis-strip h2 {
+  margin-bottom: 20px;
+}
+
+.thesis-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.thesis-columns p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
 }
 
 .plain-inner {
@@ -424,6 +491,17 @@ blockquote {
   margin-bottom: 20px;
 }
 
+.chapter-pull {
+  margin: 28px 0 0;
+  border-block: 1px solid rgba(242, 209, 138, 0.32);
+  padding: 20px 0;
+  color: #f2d18a;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .dark-chapter {
   color: var(--vellum-light);
   background:
@@ -470,6 +548,10 @@ blockquote {
   min-height: 220px;
   padding: 28px;
   background: rgba(247, 236, 207, 0.08);
+}
+
+.compact-tools article {
+  min-height: 180px;
 }
 
 .tool-row span,
@@ -577,7 +659,15 @@ blockquote {
     var(--vellum);
 }
 
+.cases {
+  background:
+    linear-gradient(180deg, rgba(239, 224, 189, 0.96), rgba(247, 236, 207, 0.9)),
+    var(--vellum);
+}
+
 .examples .eyebrow,
+.cases .eyebrow,
+.stakes .eyebrow,
 .glossary .eyebrow,
 .practice .eyebrow {
   color: var(--cinnabar);
@@ -648,6 +738,199 @@ blockquote {
 .assay-mark::after {
   inset: 22px;
   border-radius: 50%;
+}
+
+.case-stack {
+  display: grid;
+  gap: 0;
+  margin-top: 46px;
+  border-block: 3px double rgba(80, 54, 36, 0.24);
+}
+
+.case-study {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.28fr) minmax(0, 0.72fr);
+  gap: 44px;
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-study:last-child {
+  border-bottom: 0;
+}
+
+.case-kicker {
+  margin-bottom: 0;
+  color: var(--cinnabar);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.case-study h3 {
+  grid-column: 2;
+  margin-bottom: 12px;
+  color: var(--lapis);
+  font-size: 1.68rem;
+}
+
+.case-study p:not(.case-kicker) {
+  grid-column: 2;
+  margin-bottom: 0;
+  max-width: 760px;
+}
+
+.model-section {
+  color: var(--vellum-light);
+  background:
+    linear-gradient(135deg, rgba(37, 63, 104, 0.94), rgba(35, 23, 17, 0.98) 54%, rgba(47, 107, 93, 0.9)),
+    #211711;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.38fr) minmax(0, 0.62fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.model-diagram {
+  position: sticky;
+  top: 44px;
+  min-height: 520px;
+}
+
+.alchemy-wheel {
+  position: relative;
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  margin-top: 28px;
+  border: 1px solid rgba(242, 209, 138, 0.42);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(242, 209, 138, 0.2) 0 16%, transparent 17%),
+    linear-gradient(45deg, transparent 49.5%, rgba(242, 209, 138, 0.2) 50%, transparent 50.5%),
+    linear-gradient(135deg, transparent 49.5%, rgba(242, 209, 138, 0.18) 50%, transparent 50.5%),
+    rgba(247, 236, 207, 0.05);
+  box-shadow: inset 0 0 0 18px rgba(247, 236, 207, 0.03);
+}
+
+.wheel-core,
+.model-node {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+.wheel-core {
+  inset: 50%;
+  width: 116px;
+  height: 116px;
+  margin: -58px 0 0 -58px;
+  border: 1px solid rgba(242, 209, 138, 0.52);
+  color: #f2d18a;
+  background: rgba(35, 23, 17, 0.64);
+}
+
+.model-node {
+  width: 92px;
+  height: 92px;
+  border: 1px solid rgba(242, 209, 138, 0.38);
+  color: rgba(247, 236, 207, 0.72);
+  background: rgba(35, 23, 17, 0.7);
+  transition:
+    color 500ms ease,
+    border-color 500ms ease,
+    box-shadow 500ms ease,
+    transform 500ms ease;
+}
+
+.node-lens {
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.node-alembic {
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+
+.node-crucible {
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.node-cellar {
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+
+.alchemy-wheel[data-active-stage="lens"] .node-lens,
+.alchemy-wheel[data-active-stage="alembic"] .node-alembic,
+.alchemy-wheel[data-active-stage="crucible"] .node-crucible,
+.alchemy-wheel[data-active-stage="cellar"] .node-cellar {
+  border-color: #f2d18a;
+  color: #f2d18a;
+  box-shadow: 0 0 28px rgba(242, 209, 138, 0.34);
+}
+
+.model-copy {
+  display: grid;
+  gap: 34px;
+}
+
+.model-step {
+  min-height: 360px;
+  border-left: 1px solid rgba(242, 209, 138, 0.34);
+  padding: 0 0 0 32px;
+}
+
+.model-step p:not(.eyebrow) {
+  max-width: 620px;
+  color: rgba(247, 236, 207, 0.88);
+}
+
+.stakes {
+  background:
+    linear-gradient(180deg, rgba(247, 236, 207, 0.95), rgba(239, 224, 189, 0.74)),
+    var(--vellum);
+}
+
+.stakes-ledger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 46px;
+  border: 3px double rgba(80, 54, 36, 0.26);
+  background: rgba(255, 249, 229, 0.42);
+}
+
+.stakes-ledger article {
+  padding: 28px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stakes-ledger article:nth-child(2n) {
+  border-right: 0;
+}
+
+.stakes-ledger article:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.stakes-ledger h3 {
+  color: var(--cinnabar);
+}
+
+.stakes-ledger p {
+  margin-bottom: 0;
 }
 
 .critique {
@@ -885,13 +1168,17 @@ blockquote {
     padding-bottom: 42px;
   }
 
+  .lead-section,
   .plain-section,
   .folio,
+  .model-section,
   .chapter,
   .assay {
     padding: 68px 16px;
   }
 
+  .lead-grid,
+  .model-grid,
   .plain-inner,
   .folio-inner,
   .chapter-grid,
@@ -902,6 +1189,10 @@ blockquote {
 
   .plain-heading {
     position: static;
+  }
+
+  .pull-quote p {
+    font-size: 2rem;
   }
 
   .chapter-grid.reversed .chapter-title {
@@ -927,6 +1218,31 @@ blockquote {
 
   .practice-steps {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .case-study {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .case-study h3,
+  .case-study p:not(.case-kicker) {
+    grid-column: 1;
+  }
+
+  .model-diagram {
+    position: relative;
+    top: auto;
+    min-height: auto;
+  }
+
+  .alchemy-wheel {
+    max-width: 360px;
+  }
+
+  .model-step {
+    min-height: auto;
+    padding-bottom: 24px;
   }
 
   .distillery {
@@ -1001,8 +1317,10 @@ blockquote {
     min-height: 82svh;
   }
 
+  .lead-section,
   .plain-section,
   .folio,
+  .model-section,
   .chapter,
   .assay {
     padding: 58px 16px;
@@ -1027,6 +1345,38 @@ blockquote {
 
   .hero-line {
     font-size: 1.2rem;
+  }
+
+  .lead-copy p:not(.eyebrow) {
+    font-size: 1.04rem;
+  }
+
+  .pull-quote {
+    padding: 24px 0;
+  }
+
+  .pull-quote p {
+    font-size: 1.8rem;
+  }
+
+  .thesis-strip {
+    padding: 24px;
+  }
+
+  .thesis-columns,
+  .stakes-ledger {
+    grid-template-columns: 1fr;
+  }
+
+  .stakes-ledger article,
+  .stakes-ledger article:nth-child(2n),
+  .stakes-ledger article:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stakes-ledger article:last-child {
+    border-bottom: 0;
   }
 
   blockquote {
@@ -1066,6 +1416,36 @@ blockquote {
   .guild-table,
   .practice-steps {
     margin-top: 34px;
+  }
+
+  .case-stack {
+    margin-top: 34px;
+  }
+
+  .case-study {
+    padding: 28px 0;
+  }
+
+  .case-study h3 {
+    font-size: 1.42rem;
+  }
+
+  .alchemy-wheel {
+    max-width: 300px;
+    margin-inline: auto;
+  }
+
+  .model-node {
+    width: 74px;
+    height: 74px;
+    font-size: 0.95rem;
+  }
+
+  .wheel-core {
+    width: 90px;
+    height: 90px;
+    margin: -45px 0 0 -45px;
+    font-size: 0.95rem;
   }
 
   .glossary-grid,

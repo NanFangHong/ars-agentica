@@ -6,6 +6,30 @@ const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const wheel = document.querySelector(".alchemy-wheel");
+const stageTargets = [...document.querySelectorAll("[data-stage]")];
+
+function updateActiveStage() {
+  if (!wheel || stageTargets.length === 0) {
+    return;
+  }
+
+  const viewportMiddle = window.innerHeight * 0.46;
+  let activeStage = wheel.dataset.activeStage || "lens";
+  let closest = Number.POSITIVE_INFINITY;
+
+  for (const target of stageTargets) {
+    const rect = target.getBoundingClientRect();
+    const distance = Math.abs(rect.top + rect.height * 0.3 - viewportMiddle);
+    const isNearViewport = rect.bottom > 0 && rect.top < window.innerHeight;
+    if (isNearViewport && distance < closest) {
+      closest = distance;
+      activeStage = target.dataset.stage;
+    }
+  }
+
+  wheel.dataset.activeStage = activeStage;
+}
 
 function updateReadingState() {
   const scrollTop = window.scrollY;
@@ -26,21 +50,17 @@ function updateReadingState() {
   for (const link of navLinks) {
     link.classList.toggle("is-active", link.getAttribute("href") === `#${activeId}`);
   }
+
+  updateActiveStage();
 }
 
 function prepareRevealDelays() {
-  for (const groupSelector of [".tool-row", ".takeaway-grid", ".example-grid", ".objection-grid", ".practice-steps"]) {
+  for (const groupSelector of [".tool-row", ".case-stack", ".stakes-ledger", ".objection-grid", ".glossary-grid", ".practice-steps"]) {
     for (const group of document.querySelectorAll(groupSelector)) {
       [...group.querySelectorAll("[data-reveal]")].forEach((item, index) => {
         item.style.transitionDelay = `${Math.min(index * 90, 360)}ms`;
       });
     }
-  }
-
-  for (const group of document.querySelectorAll(".guild-table")) {
-    [...group.querySelectorAll('[role="row"][data-reveal]')].forEach((item, index) => {
-      item.style.transitionDelay = `${Math.min(index * 80, 420)}ms`;
-    });
   }
 }
 
@@ -95,3 +115,4 @@ window.addEventListener("scroll", updateReadingState, { passive: true });
 window.addEventListener("resize", updateReadingState);
 updateReadingState();
 setupScrollReveals();
+updateActiveStage();
