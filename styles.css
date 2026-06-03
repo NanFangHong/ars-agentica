@@ -240,11 +240,19 @@ h3 {
   font-size: 1.06rem;
 }
 
+.byline {
+  margin: 24px 0 0;
+  color: rgba(247, 236, 207, 0.72);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
 .lead-section,
 .plain-section,
 .folio,
 .model-section,
 .chapter,
+.field-notes,
 .assay {
   position: relative;
   padding: 88px 20px;
@@ -264,6 +272,7 @@ h3 {
 .stakes-ledger,
 .guild-table,
 .practice-steps,
+.field-notes-inner,
 .assay-panel {
   width: min(100%, var(--max));
   margin: 0 auto;
@@ -668,7 +677,7 @@ blockquote {
 .examples .eyebrow,
 .cases .eyebrow,
 .stakes .eyebrow,
-.glossary .eyebrow,
+.field-notes .eyebrow,
 .practice .eyebrow {
   color: var(--cinnabar);
 }
@@ -1007,29 +1016,53 @@ blockquote {
   font-weight: 700;
 }
 
-.glossary {
+.field-notes {
   background:
-    linear-gradient(135deg, rgba(37, 63, 104, 0.08), rgba(247, 236, 207, 0.94)),
+    linear-gradient(180deg, rgba(247, 236, 207, 0.95), rgba(239, 224, 189, 0.82)),
     var(--vellum-light);
 }
 
-.glossary-grid {
+.field-notes-inner {
+  max-width: 940px;
+  border-top: 3px double rgba(80, 54, 36, 0.26);
+  border-bottom: 3px double rgba(80, 54, 36, 0.26);
+  padding: 38px 0;
+}
+
+.field-notes-inner h2 {
+  margin-bottom: 22px;
+  font-size: 2.15rem;
+}
+
+.field-notes dl {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 0;
+}
+
+.field-notes dl div {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.35fr) minmax(0, 0.65fr);
   gap: 18px;
+  border-top: 1px solid var(--line);
+  padding: 17px 18px 17px 0;
 }
 
-.glossary-grid article {
-  border-left: 2px solid rgba(150, 57, 45, 0.56);
-  padding: 0 0 0 20px;
+.field-notes dl div:nth-child(-n + 2) {
+  border-top: 0;
 }
 
-.glossary-grid h3 {
-  color: var(--lapis);
+.field-notes dt {
+  color: var(--cinnabar);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.16rem;
+  font-weight: 700;
 }
 
-.glossary-grid p {
-  margin-bottom: 0;
+.field-notes dd {
+  margin: 0;
+  color: var(--ink-soft);
 }
 
 .practice {
@@ -1098,12 +1131,24 @@ blockquote {
   box-shadow: 0 24px 48px rgba(74, 45, 22, 0.12);
 }
 
-.assay-panel ol {
-  padding-left: 1.4em;
+.assay-checks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 28px;
 }
 
-.assay-panel li {
-  margin-bottom: 14px;
+.assay-checks p {
+  border-left: 2px solid rgba(150, 57, 45, 0.46);
+  margin-bottom: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  line-height: 1.58;
+}
+
+.assay-checks strong {
+  color: var(--cinnabar);
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 .closing {
@@ -1173,6 +1218,7 @@ blockquote {
   .folio,
   .model-section,
   .chapter,
+  .field-notes,
   .assay {
     padding: 68px 16px;
   }
@@ -1322,6 +1368,7 @@ blockquote {
   .folio,
   .model-section,
   .chapter,
+  .field-notes,
   .assay {
     padding: 58px 16px;
   }
@@ -1364,8 +1411,21 @@ blockquote {
   }
 
   .thesis-columns,
-  .stakes-ledger {
+  .stakes-ledger,
+  .field-notes dl {
     grid-template-columns: 1fr;
+  }
+
+  .field-notes dl div,
+  .field-notes dl div:nth-child(-n + 2) {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    border-top: 1px solid var(--line);
+    padding-right: 0;
+  }
+
+  .field-notes dl div:first-child {
+    border-top: 0;
   }
 
   .stakes-ledger article,
@@ -1385,7 +1445,8 @@ blockquote {
 
   .tool-row,
   .example-grid,
-  .objection-grid {
+  .objection-grid,
+  .assay-checks {
     grid-template-columns: 1fr;
   }
 
@@ -1397,6 +1458,18 @@ blockquote {
   .assay-panel {
     min-height: 0;
     padding: 22px;
+  }
+
+  .assay-checks {
+    gap: 16px;
+    margin-top: 22px;
+  }
+
+  .closing {
+    margin-top: 24px;
+    padding-top: 22px;
+    font-size: 1.06rem;
+    line-height: 1.55;
   }
 
   .takeaway-grid article {
@@ -1448,7 +1521,6 @@ blockquote {
     font-size: 0.95rem;
   }
 
-  .glossary-grid,
   .practice-steps {
     grid-template-columns: 1fr;
   }

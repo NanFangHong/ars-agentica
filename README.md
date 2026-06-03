@@ -7,7 +7,7 @@ A static GitHub Pages essay on two emerging AI-era crafts:
 
 The page is plain HTML/CSS/JS. It frames AI as a public argument: expertise is becoming
 portable, but portability can strip away context. It includes a concrete opening scene, mini
-case studies, a glossary, practical first steps, and subtle scroll-triggered effects that respect
+case studies, field notes, practical first steps, and subtle scroll-triggered effects that respect
 reduced-motion preferences.
 
 No build step is required. If GitHub Pages points at the repository root, visit:

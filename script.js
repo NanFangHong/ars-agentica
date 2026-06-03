@@ -55,7 +55,7 @@ function updateReadingState() {
 }
 
 function prepareRevealDelays() {
-  for (const groupSelector of [".tool-row", ".case-stack", ".stakes-ledger", ".objection-grid", ".glossary-grid", ".practice-steps"]) {
+  for (const groupSelector of [".tool-row", ".case-stack", ".stakes-ledger", ".objection-grid", ".practice-steps"]) {
     for (const group of document.querySelectorAll(groupSelector)) {
       [...group.querySelectorAll("[data-reveal]")].forEach((item, index) => {
         item.style.transitionDelay = `${Math.min(index * 90, 360)}ms`;
