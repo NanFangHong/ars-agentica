@@ -1107,8 +1107,8 @@ blockquote {
 }
 
 .case-matrix div:last-child {
-  grid-column: 1 / -1;
-  min-height: 0;
+  grid-column: auto;
+  min-height: 150px;
 }
 
 .case-matrix dt {

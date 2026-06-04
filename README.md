@@ -3,13 +3,13 @@
 A static GitHub Pages essay and civic assay on what institutions owe people when expert judgment becomes software:
 
 - Attention design: shaping the path of human judgment
-- Knowledge distillation: turning courses, training, and expert habits into agent skills
+- Ignorance distillation: turning missing facts, source silences, forbidden inferences, and stop rules into agent behavior
 
 The page is plain HTML/CSS/JS. It frames AI as a magazine-style public argument: expertise is
 being packaged into systems that route, rank, delay, and discipline. It includes a composite opening
 scene, a why-now spread, a strong public-benefit counterargument, an institution-temptation section,
 a civic question section, an eight-part Civic Agent Scorecard, a contestability test, composite case
-files, an agent-response comparison, a worked distillation example, public accountability cards, field
+files, an agent-response comparison, a worked ignorance-mapping example, public accountability cards, field
 notes, a Liquidity Happy Hours field-lab bridge, a public-agent deployment checklist, and
 scroll-triggered effects that keep text readable during anchor jumps and quick mobile scrolling.
 
