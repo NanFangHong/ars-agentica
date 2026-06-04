@@ -1,15 +1,15 @@
 # Ars Agentica
 
-A static GitHub Pages essay and civic assay on what institutions owe people when expert judgment becomes software:
+A static GitHub Pages essay and civic assay on what institutions owe people when expert judgment becomes software. It frames two old human crafts as public duties in the agent era:
 
-- Attention design: shaping the path of human judgment
-- Ignorance distillation: turning missing facts, source silences, forbidden inferences, and stop rules into agent behavior
+- The sculptor / attention designer: shaping what appears first, what recedes, and what remains contestable
+- The oenologist / ignorance distiller: classifying uncertainty before an institution converts it into action
 
 The page is plain HTML/CSS/JS. It frames AI as a magazine-style public argument: expertise is
 being packaged into systems that route, rank, delay, and discipline. It includes a composite opening
-scene, a why-now spread, a strong public-benefit counterargument, an institution-temptation section,
-a civic question section, an eight-part Civic Agent Scorecard, a contestability test, composite case
-files, an agent-response comparison, a worked ignorance-mapping example, public accountability cards, field
+studio-and-cellar scene, a civilizational claim, an HR room scene, a strong public-benefit counterargument,
+two craft sections, an institution-temptation section, composite case files, a public assay, an eight-part
+Civic Agent Scorecard, a contestability test, an agent-response comparison, a worked ignorance-mapping example, field
 notes, a Liquidity Happy Hours field-lab bridge, a public-agent deployment checklist, and
 scroll-triggered effects that keep text readable during anchor jumps and quick mobile scrolling.
 
