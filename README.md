@@ -6,11 +6,11 @@ A static GitHub Pages essay and civic assay on what institutions owe people when
 - The oenologist / ignorance distiller: classifying uncertainty before an institution converts it into action
 
 The page is plain HTML/CSS/JS. It frames AI as a magazine-style public argument: expert practice is
-being packaged into systems that route, rank, delay, and discipline. It includes a composite opening
+being packaged into deployments that route, rank, delay, and discipline. It includes a composite opening
 studio-and-cellar scene, a civilizational claim, an HR room scene, a strong public-benefit counterargument,
 two craft sections, an institution-temptation section, composite case files, a public assay, an eight-part
-Civic Agent Scorecard, a contestability test, an agent-response comparison, a worked ignorance-mapping example, field
-notes, a Liquidity Happy Hours field-lab bridge, a public-agent deployment checklist, and
+Civic Deployment Scorecard, a contestability test, a boundary-response comparison, a worked ignorance-mapping example, field
+notes, a Liquidity Happy Hours field-lab bridge, a public-agent workflow deployment checklist, and
 scroll-triggered effects that keep text readable during anchor jumps and quick mobile scrolling.
 
 Run local visual QA after starting a static server:
