@@ -1,11 +1,11 @@
 # Ars Agentica
 
-A static GitHub Pages essay and civic assay on what institutions owe people when expert routines are packaged as software and human discernment must remain answerable. Its central claim is that AI does not abolish old human crafts; it changes their material. It frames two ancient arts as public duties in the agent era:
+A static GitHub Pages essay and civic assay on what institutions owe people when expertise becomes software and human discernment must remain answerable. Its central claim is that AI does not abolish old human crafts; it revives them under new public pressure. It frames two ancient arts as public duties in the agent era:
 
 - The sculptor / attention designer: shaping salience so the real form of a problem can become visible and contestable
 - The oenologist / ignorance distiller: classifying ignorance before an institution converts uncertainty into action
 
-The page is plain HTML/CSS/JS. It frames AI as a magazine-style public argument: expert practice is
+The page is plain HTML/CSS/JS. It frames AI as a magazine-style public argument: expertise is
 being packaged into deployments that route, rank, delay, and discipline. It includes a composite opening
 studio-and-cellar scene, a craft-becomes-code civilizational claim, an HR room scene, a strong public-benefit counterargument,
 two craft sections, an institution-temptation section, composite case files, a public assay, an eight-part
