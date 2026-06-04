@@ -1,14 +1,15 @@
 # Ars Agentica
 
-A static GitHub Pages essay on two emerging AI-era crafts:
+A static GitHub Pages essay on human agency and two emerging AI-era crafts:
 
 - Attention sculpture: shaping the path of human judgment
 - Knowledge distillation: turning courses, training, and expert habits into agent skills
 
 The page is plain HTML/CSS/JS. It frames AI as a magazine-style public argument: expertise is
 becoming portable, but portability can strip away context. It includes a concrete opening scene,
-a why-now spread, an agent-response comparison, mini case studies, a worked distillation example,
-a skeptical counterargument, field notes, practical first steps, and subtle scroll-triggered effects
+a why-now spread, an institution-temptation section, an agency test, public-interest cases, an
+agent-response comparison, a worked distillation example, a skeptical counterargument, public
+accountability cards, field notes, a final automation checklist, and subtle scroll-triggered effects
 that respect reduced-motion preferences.
 
 No build step is required. If GitHub Pages points at the repository root, visit:
