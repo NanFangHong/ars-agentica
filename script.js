@@ -72,6 +72,18 @@ function prepareRevealDelays() {
   }
 }
 
+function revealVisibleNow() {
+  const revealItems = [...document.querySelectorAll("[data-reveal]")];
+  const margin = window.innerHeight * 0.18;
+
+  for (const item of revealItems) {
+    const rect = item.getBoundingClientRect();
+    if (rect.bottom >= -margin && rect.top <= window.innerHeight + margin) {
+      item.classList.add("is-visible");
+    }
+  }
+}
+
 function setupScrollReveals() {
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
   const animatedGroups = [...document.querySelectorAll("[data-animate]")];
@@ -117,10 +129,14 @@ function setupScrollReveals() {
   for (const group of animatedGroups) {
     groupObserver.observe(group);
   }
+
+  revealVisibleNow();
 }
 
 window.addEventListener("scroll", updateReadingState, { passive: true });
 window.addEventListener("resize", updateReadingState);
+window.addEventListener("hashchange", () => window.requestAnimationFrame(revealVisibleNow));
+window.addEventListener("pageshow", revealVisibleNow);
 updateReadingState();
 setupScrollReveals();
 updateActiveStage();
