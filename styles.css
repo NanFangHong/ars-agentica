@@ -268,6 +268,7 @@ h3 {
 }
 
 .lead-grid,
+.early-questions,
 .thesis-strip,
 .plain-inner,
 .folio-inner,
@@ -348,6 +349,25 @@ h3 {
   font-size: 2.45rem;
   font-weight: 700;
   line-height: 1.08;
+}
+
+.early-questions {
+  margin-top: 46px;
+  border-left: 4px double rgba(150, 57, 45, 0.36);
+  padding: 24px 28px;
+  background:
+    linear-gradient(135deg, rgba(47, 107, 93, 0.1), rgba(216, 189, 130, 0.18)),
+    rgba(255, 249, 229, 0.72);
+}
+
+.early-questions p:last-child {
+  max-width: 980px;
+  margin-bottom: 0;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.72rem;
+  font-weight: 700;
+  line-height: 1.22;
 }
 
 .thesis-strip {
@@ -1702,6 +1722,10 @@ blockquote {
     font-size: 2rem;
   }
 
+  .early-questions p:last-child {
+    font-size: 1.48rem;
+  }
+
   .chapter-grid.reversed .chapter-title {
     order: 0;
   }
@@ -1905,6 +1929,15 @@ blockquote {
 
   .pull-quote p {
     font-size: 1.8rem;
+  }
+
+  .early-questions {
+    margin-top: 34px;
+    padding: 20px;
+  }
+
+  .early-questions p:last-child {
+    font-size: 1.28rem;
   }
 
   .marginalia {
