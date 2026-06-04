@@ -18,7 +18,9 @@ const viewports = [
     viewport: { width: 1440, height: 1100 },
     shots: [
       ["hero", ".hero"],
+      ["scorecard", "#scorecard"],
       ["cases", "#cases"],
+      ["field-lab", "#field-lab"],
       ["checklist", "#checklist"],
     ],
   },
@@ -28,13 +30,15 @@ const viewports = [
     shots: [
       ["hero", ".hero"],
       ["lead", "#thesis"],
+      ["scorecard", "#scorecard"],
       ["cases", "#cases"],
+      ["field-lab", "#field-lab"],
       ["checklist", "#checklist"],
     ],
   },
 ];
 
-const anchorIds = ["thesis", "why-now", "public-benefit", "temptation", "attention", "cases", "cautions", "checklist"];
+const anchorIds = ["thesis", "civic-question", "scorecard", "cases", "field-lab", "checklist"];
 
 async function stabilizePage(page) {
   await page.waitForLoadState("load");

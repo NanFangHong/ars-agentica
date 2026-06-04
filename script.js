@@ -57,6 +57,7 @@ function updateReadingState() {
 function prepareRevealDelays() {
   for (const groupSelector of [
     ".tool-row",
+    ".scorecard-grid",
     ".case-stack",
     ".skill-comparison",
     ".case-file-grid",

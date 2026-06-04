@@ -120,8 +120,8 @@ img {
 }
 
 .chapter-nav {
-  gap: 18px;
-  font-size: 0.9rem;
+  gap: 14px;
+  font-size: 0.86rem;
   font-weight: 600;
 }
 
@@ -285,6 +285,8 @@ h3 {
 .skeptic-note,
 .stakes-ledger,
 .guild-table,
+.scorecard-grid,
+.veto-rule,
 .practice-steps,
 .field-notes-inner,
 .assay-panel {
@@ -441,6 +443,102 @@ h3 {
   background:
     linear-gradient(180deg, rgba(247, 236, 207, 0.96), rgba(231, 207, 154, 0.32)),
     var(--vellum-light);
+}
+
+.civic-question {
+  background:
+    linear-gradient(180deg, rgba(239, 224, 189, 0.94), rgba(247, 236, 207, 0.9)),
+    var(--vellum);
+}
+
+.civic-question h2 {
+  max-width: 520px;
+  color: var(--lapis);
+}
+
+.civic-question .chapter-body {
+  border-left: 3px double rgba(150, 57, 45, 0.28);
+  padding-left: 34px;
+}
+
+.scorecard {
+  background:
+    linear-gradient(180deg, rgba(247, 236, 207, 0.96), rgba(239, 224, 189, 0.82)),
+    var(--vellum-light);
+}
+
+.scorecard h2 {
+  color: var(--lapis);
+}
+
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 52px;
+}
+
+.scorecard-grid article {
+  min-height: 320px;
+  border: 1px solid rgba(80, 54, 36, 0.22);
+  border-radius: 6px;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 249, 229, 0.8), rgba(216, 189, 130, 0.14)),
+    rgba(247, 236, 207, 0.72);
+  box-shadow: 0 18px 36px rgba(74, 45, 22, 0.06);
+}
+
+.scorecard-grid span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--cinnabar);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+
+.scorecard-grid h3 {
+  min-height: 3rem;
+  color: var(--lapis);
+  font-size: 1.34rem;
+}
+
+.scorecard-grid p {
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+  line-height: 1.52;
+}
+
+.scorecard-grid p:last-child {
+  margin-bottom: 0;
+}
+
+.scorecard-grid strong {
+  color: var(--cinnabar);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.veto-rule {
+  margin-top: 34px;
+  border: 3px double rgba(150, 57, 45, 0.34);
+  border-radius: 6px;
+  padding: 30px 34px;
+  background:
+    linear-gradient(135deg, rgba(150, 57, 45, 0.12), rgba(47, 107, 93, 0.12)),
+    rgba(255, 249, 229, 0.72);
+}
+
+.veto-rule h3 {
+  color: var(--cinnabar);
+  font-size: 1.85rem;
+}
+
+.veto-rule p:last-child {
+  max-width: 820px;
+  margin-bottom: 0;
+  color: var(--ink-soft);
 }
 
 .why-now {
@@ -858,6 +956,7 @@ blockquote {
 .cases .eyebrow,
 .stakes .eyebrow,
 .field-notes .eyebrow,
+.field-lab .eyebrow,
 .practice .eyebrow {
   color: var(--cinnabar);
 }
@@ -1375,6 +1474,43 @@ blockquote {
   color: var(--ink-soft);
 }
 
+.field-lab {
+  border-top: 1px solid rgba(80, 54, 36, 0.16);
+  border-bottom: 1px solid rgba(80, 54, 36, 0.16);
+  background:
+    linear-gradient(180deg, rgba(239, 224, 189, 0.9), rgba(247, 236, 207, 0.94)),
+    var(--vellum);
+}
+
+.field-lab h2 {
+  max-width: 560px;
+  color: var(--lapis);
+}
+
+.field-lab .chapter-body {
+  border-left: 3px double rgba(47, 107, 93, 0.3);
+  padding-left: 34px;
+}
+
+.field-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin-top: 8px;
+  border: 1px solid rgba(38, 63, 104, 0.36);
+  border-radius: 6px;
+  padding: 0 18px;
+  color: var(--vellum-light);
+  background: var(--lapis);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+.field-link:hover {
+  background: var(--verdigris);
+}
+
 .practice {
   color: var(--vellum-light);
   background:
@@ -1584,6 +1720,7 @@ blockquote {
   .tool-row,
   .example-grid,
   .objection-grid,
+  .scorecard-grid,
   .case-file-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1594,6 +1731,13 @@ blockquote {
 
   .agency-test ul {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .civic-question .chapter-body,
+  .field-lab .chapter-body {
+    border-left: 0;
+    border-top: 3px double rgba(80, 54, 36, 0.2);
+    padding: 26px 0 0;
   }
 
   .agency-test li,
@@ -1813,6 +1957,7 @@ blockquote {
   .objection-grid,
   .skill-comparison,
   .response-grid,
+  .scorecard-grid,
   .case-file-grid,
   .assay-checks {
     grid-template-columns: 1fr;
@@ -1821,6 +1966,7 @@ blockquote {
   .tool-row article,
   .example-grid article,
   .objection-grid article,
+  .scorecard-grid article,
   .skill-comparison article,
   .vessel,
   .practice-steps li,
@@ -1891,6 +2037,8 @@ blockquote {
   .example-grid,
   .objection-grid,
   .distillery,
+  .scorecard-grid,
+  .veto-rule,
   .skill-comparison,
   .response-lab,
   .case-file,
