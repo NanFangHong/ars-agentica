@@ -20,7 +20,7 @@ function updateActiveStage() {
 
   const modelRect = modelSection?.getBoundingClientRect();
   if (modelRect && modelRect.bottom > 0 && modelRect.top < window.innerHeight && modelSteps.length > 0) {
-    const stageLine = window.innerHeight * 0.72;
+    const stageLine = window.innerHeight * 0.42;
     let activeModelStage = wheel.dataset.activeStage || "lens";
     for (const step of modelSteps) {
       const rect = step.getBoundingClientRect();
