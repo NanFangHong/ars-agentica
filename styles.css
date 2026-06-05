@@ -1385,17 +1385,41 @@ blockquote {
   padding-block: 64px;
 }
 
+.compact-model .model-grid {
+  align-items: center;
+}
+
+.compact-model .model-pin,
+.compact-model .model-pin.is-fixed,
+.compact-model .model-pin.is-pinned-end {
+  position: relative;
+  inset: auto;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  width: auto;
+  min-height: 0;
+  transform: none;
+}
+
 .compact-model .alchemy-wheel {
   width: min(100%, 370px);
   opacity: 0.9;
 }
 
-.compact-model .model-step {
-  min-height: 180px;
+.model-summary {
+  align-self: center;
+  border-left: 1px solid rgba(242, 209, 138, 0.34);
+  padding-left: 32px;
 }
 
-.compact-model .model-step h2 {
+.model-summary h2 {
   font-size: clamp(2.1rem, 3vw, 3.15rem);
+}
+
+.model-summary p:not(.eyebrow) {
+  max-width: 540px;
+  color: rgba(247, 236, 207, 0.88);
 }
 
 .stakes {
@@ -1639,17 +1663,12 @@ blockquote {
   margin-top: 52px;
 }
 
-.practice-steps li {
-  list-style: none;
+.practice-steps article {
   min-height: 250px;
   border: 1px solid rgba(189, 139, 53, 0.4);
   border-radius: 6px;
   padding: 28px;
   background: rgba(247, 236, 207, 0.08);
-}
-
-.practice-steps li::marker {
-  content: "";
 }
 
 .practice-steps span {
@@ -2126,7 +2145,7 @@ blockquote {
   .scorecard-grid article,
   .skill-comparison article,
   .vessel,
-  .practice-steps li,
+  .practice-steps article,
   .assay-panel {
     min-height: 0;
     padding: 22px;
