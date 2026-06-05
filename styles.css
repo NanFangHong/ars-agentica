@@ -94,29 +94,17 @@ img {
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
-.brand-mark,
+.brand,
 .chapter-nav {
   display: inline-flex;
   align-items: center;
 }
 
-.brand-mark {
+.brand {
   gap: 12px;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.25rem;
   font-weight: 700;
-}
-
-.brand-sigil {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(247, 236, 207, 0.72);
-  border-radius: 50%;
-  color: var(--gold);
-  font-size: 1.35rem;
-  line-height: 1;
 }
 
 .chapter-nav {
@@ -2001,13 +1989,8 @@ blockquote {
     padding-top: 14px;
   }
 
-  .brand-mark {
+  .brand {
     font-size: 1.12rem;
-  }
-
-  .brand-sigil {
-    width: 34px;
-    height: 34px;
   }
 
   .chapter-nav {
