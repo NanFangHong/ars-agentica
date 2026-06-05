@@ -1377,6 +1377,14 @@ blockquote {
   color: rgba(247, 236, 207, 0.88);
 }
 
+.compact-model .model-copy {
+  gap: 20px;
+}
+
+.compact-model .model-step {
+  min-height: 210px;
+}
+
 .stakes {
   background:
     linear-gradient(180deg, rgba(247, 236, 207, 0.95), rgba(239, 224, 189, 0.74)),
