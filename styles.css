@@ -1381,8 +1381,21 @@ blockquote {
   gap: 20px;
 }
 
+.compact-model {
+  padding-block: 64px;
+}
+
+.compact-model .alchemy-wheel {
+  width: min(100%, 370px);
+  opacity: 0.9;
+}
+
 .compact-model .model-step {
-  min-height: 210px;
+  min-height: 180px;
+}
+
+.compact-model .model-step h2 {
+  font-size: clamp(2.1rem, 3vw, 3.15rem);
 }
 
 .stakes {
@@ -1627,11 +1640,16 @@ blockquote {
 }
 
 .practice-steps li {
+  list-style: none;
   min-height: 250px;
   border: 1px solid rgba(189, 139, 53, 0.4);
   border-radius: 6px;
   padding: 28px;
   background: rgba(247, 236, 207, 0.08);
+}
+
+.practice-steps li::marker {
+  content: "";
 }
 
 .practice-steps span {
