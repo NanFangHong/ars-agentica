@@ -267,6 +267,10 @@ h3 {
   padding: 88px 20px;
 }
 
+:where(section[id]) {
+  scroll-margin-top: 24px;
+}
+
 .lead-grid,
 .early-questions,
 .thesis-strip,
@@ -1242,13 +1246,38 @@ blockquote {
   display: grid;
   grid-template-columns: minmax(280px, 0.38fr) minmax(0, 0.62fr);
   gap: 72px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .model-diagram {
-  position: sticky;
-  top: 44px;
-  min-height: 520px;
+  position: relative;
+}
+
+.model-pin {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: flex;
+  width: 100%;
+  min-height: min(640px, calc(100svh - 96px));
+  transform: translateY(var(--model-drift, 0px));
+  transition: transform 360ms ease;
+  will-change: transform;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.model-pin.is-fixed {
+  position: fixed;
+  top: var(--model-pin-top, 56px);
+  left: var(--model-pin-left, 0);
+  z-index: 2;
+  width: var(--model-pin-width, 420px);
+}
+
+.model-pin.is-pinned-end {
+  top: auto;
+  bottom: 0;
+  transform: none;
 }
 
 .alchemy-wheel {
@@ -1843,10 +1872,19 @@ blockquote {
     grid-column: 1;
   }
 
-  .model-diagram {
+  .model-diagram,
+  .model-pin,
+  .model-pin.is-fixed,
+  .model-pin.is-pinned-end {
     position: relative;
+    inset: auto;
     top: auto;
+    left: auto;
+    bottom: auto;
+    display: block;
+    width: auto;
     min-height: auto;
+    transform: none;
   }
 
   .alchemy-wheel {
@@ -1903,8 +1941,13 @@ blockquote {
 }
 
 @media (max-width: 680px) {
+  :where(section[id]) {
+    scroll-margin-top: 16px;
+  }
+
   body {
-    font-size: 16px;
+    font-size: 15.25px;
+    line-height: 1.72;
   }
 
   .site-header {
@@ -1962,7 +2005,7 @@ blockquote {
   }
 
   .lead-copy p:not(.eyebrow) {
-    font-size: 1.04rem;
+    font-size: 0.99rem;
   }
 
   .pull-quote {
@@ -1979,7 +2022,7 @@ blockquote {
   }
 
   .early-questions p:last-child {
-    font-size: 1.28rem;
+    font-size: 1.2rem;
   }
 
   .ignorance-taxonomy {
@@ -2033,7 +2076,11 @@ blockquote {
   }
 
   blockquote {
-    font-size: 1.12rem;
+    font-size: 1.06rem;
+  }
+
+  .manuscript-leaf p {
+    font-size: 1.03rem;
   }
 
   .tool-row,
@@ -2070,7 +2117,7 @@ blockquote {
   }
 
   .closing {
-    font-size: 1.06rem;
+    font-size: 1rem;
     line-height: 1.55;
   }
 

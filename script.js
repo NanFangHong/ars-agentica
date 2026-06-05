@@ -7,10 +7,28 @@ const sections = navLinks
   .filter(Boolean);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const wheel = document.querySelector(".alchemy-wheel");
+const modelSection = document.querySelector(".model-section");
+const modelDiagram = document.querySelector(".model-diagram");
+const modelPin = document.querySelector(".model-pin");
 const stageTargets = [...document.querySelectorAll("[data-stage]")];
+const modelSteps = [...document.querySelectorAll(".model-step[data-stage]")];
 
 function updateActiveStage() {
   if (!wheel || stageTargets.length === 0) {
+    return;
+  }
+
+  const modelRect = modelSection?.getBoundingClientRect();
+  if (modelRect && modelRect.bottom > 0 && modelRect.top < window.innerHeight && modelSteps.length > 0) {
+    const stageLine = window.innerHeight * 0.72;
+    let activeModelStage = wheel.dataset.activeStage || "lens";
+    for (const step of modelSteps) {
+      const rect = step.getBoundingClientRect();
+      if (rect.top <= stageLine && rect.bottom > 0) {
+        activeModelStage = step.dataset.stage;
+      }
+    }
+    wheel.dataset.activeStage = activeModelStage;
     return;
   }
 
@@ -29,6 +47,38 @@ function updateActiveStage() {
   }
 
   wheel.dataset.activeStage = activeStage;
+}
+
+function updateModelDrift() {
+  if (!modelSection || !modelDiagram || !modelPin) {
+    return;
+  }
+
+  if (window.innerWidth <= 980 || reducedMotion) {
+    modelPin.classList.remove("is-fixed", "is-pinned-end");
+    modelPin.style.setProperty("--model-drift", "0px");
+    modelPin.style.removeProperty("--model-pin-top");
+    modelPin.style.removeProperty("--model-pin-left");
+    modelPin.style.removeProperty("--model-pin-width");
+    return;
+  }
+
+  const rect = modelSection.getBoundingClientRect();
+  const diagramRect = modelDiagram.getBoundingClientRect();
+  const pinHeight = modelPin.offsetHeight;
+  const baseTop = Math.round(Math.min(72, Math.max(36, window.innerHeight * 0.07)));
+  const travel = Math.max(1, rect.height - window.innerHeight);
+  const progress = Math.min(1, Math.max(0, -rect.top / travel));
+  const drift = Math.round(progress * Math.min(120, window.innerHeight * 0.16));
+  const fixedBottom = baseTop + drift + pinHeight;
+
+  modelPin.style.setProperty("--model-drift", `${drift}px`);
+  modelPin.style.setProperty("--model-pin-top", `${baseTop}px`);
+  modelPin.style.setProperty("--model-pin-left", `${Math.round(diagramRect.left)}px`);
+  modelPin.style.setProperty("--model-pin-width", `${Math.round(diagramRect.width)}px`);
+
+  modelPin.classList.toggle("is-fixed", diagramRect.top <= baseTop && diagramRect.bottom > fixedBottom);
+  modelPin.classList.toggle("is-pinned-end", diagramRect.bottom <= fixedBottom);
 }
 
 function updateReadingState() {
@@ -52,6 +102,7 @@ function updateReadingState() {
   }
 
   updateActiveStage();
+  updateModelDrift();
 }
 
 function prepareRevealDelays() {
@@ -141,3 +192,4 @@ window.addEventListener("pageshow", revealVisibleNow);
 updateReadingState();
 setupScrollReveals();
 updateActiveStage();
+updateModelDrift();
